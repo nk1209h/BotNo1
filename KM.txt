@@ -1,0 +1,35 @@
+如果您想在 Line Bot 中知道哪個使用者在哪個群組中發送了訊息，您可以使用 Line Messaging API。當使用者在群組中發送訊息時，Line Messaging API 會將一個包含有關訊息和使用者的物件傳遞給您的應用程序。
+
+在該物件中，您可以通過 source 屬性來識別訊息來自哪個使用者和群組。如果 source 的 type 屬性為 "user"，那麼該訊息是來自一個使用者。如果 source 的 type 屬性為 "group"，那麼該訊息是來自一個群組。此外，您可以通過 source 的 groupId 屬性來識別該群組的 ID。
+
+一旦您知道了該使用者和群組的 ID，您就可以使用 Line Messaging API 發送訊息回到該使用者和群組中。要發送訊息，您需要調用 Line Messaging API 中的 pushMessage() 方法，並傳遞使用者 ID、群組 ID 和您想要傳送的訊息。
+
+您可以使用 Line Messaging API 中的事件處理程序來獲取使用者 ID 和群組 ID。當使用者在群組中發送訊息時，您的 Line Bot 會收到一個事件，其中包含有關該訊息和使用者的詳細資訊。
+
+以下是獲取使用者 ID 和群組 ID 的一些常用方法：
+
+使用事件物件的 source 屬性來獲取使用者或群組 ID。例如，如果事件來自一個群組，您可以使用 event.source.groupId 屬性來獲取該群組的 ID。同樣，如果事件來自一個使用者，您可以使用 event.source.userId 屬性來獲取該使用者的 ID。
+
+在處理事件時，您可以使用 Line Messaging API 的 getGroupMemberIds() 方法獲取群組中的所有成員 ID。該方法需要傳遞群組 ID 作為參數，並返回一個包含所有成員 ID 的陣列。
+
+
+
+#    url = 'https://mdcgenius.tw/smtp.csv'
+#    file_name = 'smtp.csv'
+#    urllib.request.urlretrieve(url, file_name)
+#    print ("Get smtp complete")
+
+#    file_path = "smtp.csv"
+
+#    if os.path.isfile(file_path):
+#        print ("檔案存在。")
+#    else:
+#        print ("檔案不存在。")
+    
+# 讀取寄件者資訊
+#    current_dir = os.getcwd()
+#    print("目前的目錄為：", current_dir)
+#    wssmtp = ""
+
+
+#LIFF https://youtu.be/VGH-99OX8Vc
